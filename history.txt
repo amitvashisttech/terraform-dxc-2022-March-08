@@ -1,0 +1,66 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/terraform-dxc-2022-March-08.git
+    3  ls
+    4  cd terraform-dxc-2022-March-08/
+    5  ls
+    6  mkdir 00-Setup 
+    7  ls
+    8  vim 00-Setup/
+    9  vim 00-Setup/install-terraform.sh 
+   10  ls
+   11  cd 00-Setup/
+   12  ls
+   13  chmod +x install-terraform.sh 
+   14  ./install-terraform.sh 
+   15  terraform version 
+   16  terraform --help
+   17  ls
+   18  cd ..
+   19  ls
+   20  mkdir 01-Setup-AWS-Account
+   21  ls
+   22  cd 01-Setup-AWS-Account/
+   23  ls
+   24  vim README.md
+   25  cd ..
+   26  s
+   27  ls
+   28  git add . 
+   29  git commit -m "Terraform Setup"
+   30  git push 
+   31  grep -i timeout /etc/ssh/sshd_config 
+   32  grep -ri timeout /etc/ssh
+   33  ls
+   34  rm -rf terraform_1.1.7_linux_amd64.zip 
+   35  ;s
+   36  vim ~/.bashrc 
+   37  source  .bashrc
+   38  set | grep -i AWS
+   39  ls
+   40  cd terraform-dxc-2022-March-08/
+   41  ls
+   42  cd terraform-dxc-2022-March-08/
+   43  ls
+   44  mkdir 02-First-Deployment
+   45  cd 02-First-Deployment/
+   46  ls
+   47  vim main.tf 
+   48  ls
+   49  terraform init 
+   50  s
+   51  ls
+   52  terraform plan 
+   53  terraform apply 
+   54  ls -a
+   55  cat terraform.tfstate 
+   56  terraform show 
+   57  vim main.tf 
+   58  terraform plan 
+   59  terraform apply 
+   60  terraform destroy 
+   61  ls
+   62  history 
+   63  ls
+   64  cd ..
+   65  ls
+   66  history > history.txt 
