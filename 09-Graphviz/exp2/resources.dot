@@ -1,0 +1,22 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.backend (expand)" [label = "aws_instance.backend", shape = "box"]
+		"[root] aws_instance.frontend (expand)" [label = "aws_instance.frontend", shape = "box"]
+		"[root] aws_instance.us_west_frontend (expand)" [label = "aws_instance.us_west_frontend", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-west-2" [label = "provider[\"registry.terraform.io/hashicorp/aws\"].us-west-2", shape = "diamond"]
+		"[root] aws_instance.backend (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_instance.frontend (expand)" -> "[root] aws_instance.backend (expand)"
+		"[root] aws_instance.us_west_frontend (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-west-2"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.frontend (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.us_west_frontend (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.frontend (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-west-2 (close)" -> "[root] aws_instance.us_west_frontend (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-west-2 (close)"
+	}
+}
+
