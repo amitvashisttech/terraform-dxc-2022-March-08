@@ -1,0 +1,7 @@
+---
+
+- hosts: web
+  become: yes
+  roles: 
+  - firewall 
+  - webserver
