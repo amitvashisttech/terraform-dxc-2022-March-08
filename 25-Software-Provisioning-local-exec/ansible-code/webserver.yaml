@@ -1,8 +1,0 @@
----
-
-- hosts: all
-  name: "Web Server Deployment"
-  become: yes
-  roles: 
-  - firewall 
-  - webserver

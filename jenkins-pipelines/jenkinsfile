@@ -1,0 +1,9 @@
+node {
+
+ stage('Git CheckOut') {
+    // some block
+   git branch: 'main', url: 'https://github.com/amitvashisttech/terraform-dxc-2022-March-08.git'
+ } 
+
+
+}
