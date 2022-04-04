@@ -12,7 +12,11 @@ node {
    sh "echo '<h1> TASK BUILD ID : ${env.BUILD_DISPLAY_NAME} <h1>\' > ansible-code/roles/webserver/files/jenkins.html"
  }
 
-    
+ stage('Prod Deployment on AWS') {
+   sh "/usr/bin/terraform init"
+   sh "/usr/bin/terraform apply -input=false --auto-approve"
+ }
+  
 
  }
 
