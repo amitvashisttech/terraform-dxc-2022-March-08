@@ -1,9 +1,20 @@
 node {
 
  stage('Git CheckOut') {
-    // some block
    git branch: 'main', url: 'https://github.com/amitvashisttech/terraform-dxc-2022-March-08.git'
  } 
+
+ def project_path="30-CICD"
+
+ dir(project_path) {
+  
+ stage('Getting Ready for Ansible') {
+   sh 'echo \'<h1> TASK BUILD ID : ${env.BUILD_DISPLAY_NAME} <h1>\' > ansible-code/roles/webserver/files/jenkins.html'
+ }
+
+    
+
+ }
 
 
 }
